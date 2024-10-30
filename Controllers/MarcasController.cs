@@ -46,7 +46,7 @@ namespace ApiVentas.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMarcas(int id, Marcas marcas)
         {
-            if (id != marcas.Id_Marca)
+            if (id != marcas.id_Marca)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace ApiVentas.Controllers
             _context.Marcas.Add(marcas);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMarcas", new { id = marcas.Id_Marca }, marcas);
+            return CreatedAtAction("GetMarcas", new { id = marcas.id_Marca }, marcas);
         }
 
         // DELETE: api/Marcas/5
@@ -101,7 +101,7 @@ namespace ApiVentas.Controllers
 
         private bool MarcasExists(int id)
         {
-            return _context.Marcas.Any(e => e.Id_Marca == id);
+            return _context.Marcas.Any(e => e.id_Marca == id);
         }
     }
 }

@@ -46,7 +46,7 @@ namespace ApiVentas.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCompras(int id, Compras compras)
         {
-            if (id != compras.Id_compra)
+            if (id != compras.id_compra)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace ApiVentas.Controllers
             _context.Compras.Add(compras);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetCompras", new { id = compras.Id_compra }, compras);
+            return CreatedAtAction("GetCompras", new { id = compras.id_compra }, compras);
         }
 
         // DELETE: api/Compras/5
@@ -101,7 +101,7 @@ namespace ApiVentas.Controllers
 
         private bool ComprasExists(int id)
         {
-            return _context.Compras.Any(e => e.Id_compra == id);
+            return _context.Compras.Any(e => e.id_compra == id);
         }
     }
 }

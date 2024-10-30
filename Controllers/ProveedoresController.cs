@@ -46,7 +46,7 @@ namespace ApiVentas.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProveedores(int id, Proveedores proveedores)
         {
-            if (id != proveedores.Id_Proveedor)
+            if (id != proveedores.id_Proveedor)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace ApiVentas.Controllers
             _context.Proveedores.Add(proveedores);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetProveedores", new { id = proveedores.Id_Proveedor }, proveedores);
+            return CreatedAtAction("GetProveedores", new { id = proveedores.id_Proveedor }, proveedores);
         }
 
         // DELETE: api/Proveedores/5
@@ -101,7 +101,7 @@ namespace ApiVentas.Controllers
 
         private bool ProveedoresExists(int id)
         {
-            return _context.Proveedores.Any(e => e.Id_Proveedor == id);
+            return _context.Proveedores.Any(e => e.id_Proveedor == id);
         }
     }
 }

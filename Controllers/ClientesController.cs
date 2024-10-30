@@ -46,7 +46,7 @@ namespace ApiVentas.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutClientes(int id, Clientes clientes)
         {
-            if (id != clientes.Id_Cliente)
+            if (id != clientes.id_Cliente)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace ApiVentas.Controllers
             _context.Clientes.Add(clientes);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetClientes", new { id = clientes.Id_Cliente }, clientes);
+            return CreatedAtAction("GetClientes", new { id = clientes.id_Cliente }, clientes);
         }
 
         // DELETE: api/Clientes/5
@@ -101,7 +101,7 @@ namespace ApiVentas.Controllers
 
         private bool ClientesExists(int id)
         {
-            return _context.Clientes.Any(e => e.Id_Cliente == id);
+            return _context.Clientes.Any(e => e.id_Cliente == id);
         }
     }
 }

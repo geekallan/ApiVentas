@@ -5,7 +5,7 @@ namespace ApiVentas.Models;
 public class Clientes
 {
     [Key]
-    public Int32 Id_Cliente { get; set; }
+    public Int32 id_Cliente { get; set; }
     public string? nombres { get; set; }
     public string? apellidos { get; set; }
     public string? NIT { get; set; }

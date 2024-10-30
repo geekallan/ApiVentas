@@ -46,7 +46,7 @@ namespace ApiVentas.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMenus(int id, Menus menus)
         {
-            if (id != menus.Id_menu)
+            if (id != menus.id_menu)
             {
                 return BadRequest();
             }
@@ -80,7 +80,7 @@ namespace ApiVentas.Controllers
             _context.Menus.Add(menus);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMenus", new { id = menus.Id_menu }, menus);
+            return CreatedAtAction("GetMenus", new { id = menus.id_menu }, menus);
         }
 
         // DELETE: api/Menus/5
@@ -101,7 +101,7 @@ namespace ApiVentas.Controllers
 
         private bool MenusExists(int id)
         {
-            return _context.Menus.Any(e => e.Id_menu == id);
+            return _context.Menus.Any(e => e.id_menu == id);
         }
     }
 }
